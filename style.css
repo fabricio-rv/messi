@@ -1,0 +1,197 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Estilos de Navegação (Mantidos) --- */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.active-nav::after {
+  width: 100%;
+}
+
+/* --- Cards e Títulos (Mantidos) --- */
+.stats-card {
+  transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  bottom: -5px;
+  left: 20%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+}
+
+/* --- DARK MODE CONFIG --- */
+body.dark-mode {
+  background-color: #0f172a !important; /* Azul escuro quase preto */
+  color: #f1f5f9 !important;
+}
+
+/* Ajuste dos fundos brancos para cinza escuro */
+body.dark-mode .bg-white, 
+body.dark-mode .bg-gray-50,
+body.dark-mode header {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+/* Textos que eram cinza escuro viram cinza claro */
+body.dark-mode .text-gray-600, 
+body.dark-mode .text-gray-700, 
+body.dark-mode .text-gray-800 {
+  color: #94a3b8 !important;
+}
+
+/* Ajuste dos Cards e Tabelas */
+body.dark-mode .stats-card,
+body.dark-mode table {
+  background-color: #1e293b !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode thead {
+    background-color: #1d4ed8 !important; /* Azul mais forte no cabeçalho */
+}
+
+/* ==========================================================
+   CONFIGURAÇÃO DO MODO ESCURO (DARK MODE) - CORRIGIDA
+   ========================================================== */
+
+body.dark-mode {
+  background-color: #0f172a !important; /* Azul escuro profundo */
+  color: #f1f5f9 !important;
+}
+
+/* --- 1. AJUSTE DE FUNDOS (CARDS E SEÇÕES) --- */
+body.dark-mode .bg-white, 
+body.dark-mode .bg-gray-50,
+body.dark-mode header,
+body.dark-mode #mobile-menu {
+  background-color: #1e293b !important; /* Cinza azulado para destacar do fundo */
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+/* --- 2. CORREÇÃO DE TEXTOS (ESSENCIAL) --- */
+
+/* Textos cinzas comuns ficam claros */
+body.dark-mode .text-gray-500,
+body.dark-mode .text-gray-600, 
+body.dark-mode .text-gray-700, 
+body.dark-mode .text-gray-800 {
+  color: #cbd5e1 !important; /* Cinza claro legível */
+}
+
+/* TÍTULOS PRINCIPAIS (Correção do "Galeria de Troféus" sumido) */
+body.dark-mode .text-gray-900,
+body.dark-mode .text-black,
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4 {
+    color: #ffffff !important;
+}
+
+/* AZUL ESCURO VIRA AZUL CLARO (Para ler "FC Barcelona" no escuro) */
+body.dark-mode .text-blue-600,
+body.dark-mode .text-blue-700,
+body.dark-mode .text-blue-800,
+body.dark-mode .text-blue-900 {
+    color: #60a5fa !important; /* Azul "Blue-400" do Tailwind */
+}
+
+/* --- 3. TABELA E BORDAS --- */
+body.dark-mode table,
+body.dark-mode .stats-card {
+  background-color: #1e293b !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode thead {
+    background-color: #1d4ed8 !important; /* Azul forte no cabeçalho */
+}
+
+/* Corrige o hover branco e linhas da tabela */
+body.dark-mode tbody tr:hover {
+    background-color: #334155 !important;
+}
+body.dark-mode tbody tr,
+body.dark-mode td, 
+body.dark-mode th,
+body.dark-mode tbody > :not([hidden]) ~ :not([hidden]) {
+    border-color: #334155 !important;
+}
+
+/* --- 4. ELEMENTOS DIVERSOS --- */
+
+/* Gradientes de fundo */
+body.dark-mode .bg-gradient-to-r,
+body.dark-mode .bg-gradient-to-br {
+  background: #0f172a !important; 
+}
+
+/* Ícones com fundo azul claro (agora transparentes) */
+body.dark-mode .bg-blue-100 {
+  background-color: rgba(96, 165, 250, 0.15) !important;
+  color: #60a5fa !important;
+}
+body.dark-mode .bg-blue-50 {
+    background-color: rgba(96, 165, 250, 0.1) !important;
+    border-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Tags amarelas (Recorde Mundial) */
+body.dark-mode .bg-yellow-50 {
+    background-color: rgba(234, 179, 8, 0.15) !important;
+    color: #facc15 !important;
+}
+
+/* Botão Toggle */
+body.dark-mode #theme-toggle {
+    background-color: #3b82f6 !important;
+}
+body.dark-mode #toggle-circle {
+    transform: translateX(1.75rem) !important;
+}
+
+/* Lógica dos Ícones */
+.icon-moon { display: block !important; }
+.icon-sun { display: none !important; }
+
+body.dark-mode .icon-moon { display: none !important; }
+body.dark-mode .icon-sun { display: block !important; }
